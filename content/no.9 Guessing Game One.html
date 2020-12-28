@@ -134,7 +134,27 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">no.5 List Overlap << <a href='no.5 List Overlap.html'>Previous</a> <a href='no.20 Element Search.html'>Next</a> >> no.20 Element Search<br /><h1>no.9 Guessing Game One</h1>
-<p></p>
+<p><br/>Exercise 9(and <span style="text-decoration: underline;"><span style="color: #0000ff; text-decoration: underline;">Solution</span></span>) <br/>Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right. (<em>Hint: remember to use the user input lessons from the very<span> </span><a href="https://www.practicepython.org/exercise/2014/01/29/01-character-input.html">first exercise</a></em>)</p>
+<p><span lang="zh-TW" style="color: #0000ff;">生成1到9之間的隨機數（包括1到9）。讓用戶猜測數字，然後告訴他們猜測的數字是否太低，太高或完全正確。 （提示：請記住在第一練習中使用用戶輸入的課程）</span></p>
+<p>Extras:</p>
+<ul>
+<li>Keep the game going until the user types “exit”</li>
+<li>Keep track of how many guesses the user has taken, and when the game ends, print this out. Random Numbers(and Modules)</li>
+</ul>
+<p><span lang="zh-TW">附加功能： 繼續遊戲，直到用戶鍵入“退出” 跟附踪用戶進行了多少猜測，當遊戲結束時，將其打印出來。<br/></span></p>
+<p>This is your first exposure to using Python code that somebody else wrote. In Python, these formally-distributed code packages are called modules. The thing we want from a module in this exercise is the ability to generate random numbers. This comes from the random module.</p>
+<p><span style="background-color: #ffffff; color: #0000ff;">這是您第一次使用別人編寫的Python代碼。在Python中，這些正式分發的代碼包稱為模塊。在本練習中，我們希望從模塊獲得的是生成隨機數的能力。這來自隨機模塊。</span></p>
+<p>To use a module, at the top of your file, type</p>
+<p><span lang="zh-TW" style="color: #0000ff;">要使用模塊，請在文件頂部鍵入</span></p>
+<pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span></code></pre>
+<p><br/>This means you are allowing your Python program to use a module called <code class="highlighter-rouge">random</code> in the rest of your code.To use it (and generate a random integer), now type:</p>
+<p><span lang="zh-TW" style="color: #0000ff;">這意味著您將允許Python程序在其餘代碼中使用一個名為random的模塊。 要使用它（並生成一個隨機整數），現在鍵入：</span></p>
+<pre><code class="language-python" data-lang="python">	<span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span></code></pre>
+<p><br/>Once you run this program, the variable <code class="highlighter-rouge">a</code> will have a random integer that the computer made for you, between 2 and 6 (including 2 and 6). The specific documentation for this method is here.</p>
+<p><span lang="zh-TW" style="color: #0000ff;">一旦運行此程序，變量a將具有計算機為您製作的2到6（包括2到6）之間的隨機整數。此方法的特定文檔在這裡。</span></p>
+<p><br/>There are many ways you can generate random numbers - integers, decimals, and much more. The <a href="https://docs.python.org/3.3/library/random.html">Python documentation</a> has much more detailed information about what is possible from the <code class="highlighter-rouge">random</code> module.</p>
+<p><span lang="zh-TW" style="color: #0000ff;">您可以通過多種方式生成隨機數-整數，小數等。 Python文檔提供了有關隨機模塊可能實現的功能的詳細信息。</span></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"> </span></pre>
 <br />no.5 List Overlap << <a href='no.5 List Overlap.html'>Previous</a> <a href='no.20 Element Search.html'>Next</a> >> no.20 Element Search</div>
         
     <!-- footer -->
