@@ -134,7 +134,107 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">no.9 Guessing Game One << <a href='no.9 Guessing Game One.html'>Previous</a> <br /><h1>no.20 Element Search</h1>
-<p></p><br />no.9 Guessing Game One << <a href='no.9 Guessing Game One.html'>Previous</a> </div>
+<p>Exercise 20 (and<span> </span><a href="https://www.practicepython.org/solution/2014/11/30/20-element-search-solutions.html">Solution</a>)</p>
+<p><span>Write a function that takes an ordered list of numbers (a list where the elements are in order from smallest to largest) and another number. The function decides whether or not the given number is inside the list and returns (then prints) an appropriate boolean.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">編寫一個函數，該函數接受一個有序的數字列表（一個元素從最小到最大的順序列表）和另一個數字。該函數確定給定的數字是否在列表中，並返回（然後打印）適當的布爾值。</span></p>
+<p>Extras:</p>
+<ul>
+<li>Use binary search.</li>
+</ul>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">附加功能： 使用二進制搜索。</span></p>
+<p><span style="color: #ff0000;"><strong>Booleans  布爾值</strong></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">When you are writing programs, there is often a time when you need to make a decision about something based on the truthfulness of something else. Basically, you need to make a decision based on whether something is TRUE or something is FALSE.</span></p>
+<div class="tw-ta-container hide-focus-ring tw-lfl" id="tw-target-text-container" tabindex="0">
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #0000ff;">在編寫程序時，通常會需要根據其他事物的真實性來做出決策。基本上，您需要根據某物是TRUE還是FALSE來做出決定。</span></p>
+<p>An obvious example is when using conditionals:</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">一個明顯的例子是使用條件句時：</span></p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="n">michele_age</span> <span class="o">=</span> <span class="mi">22</span>
+  <span class="n">truth_value</span> <span class="o">=</span> <span class="n">michele_age</span> <span class="o">&gt;</span> <span class="mi">17</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">truth_value</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Michele can see a rated R movie"</span><span class="p">)<br/><br/></span></code></pre>
+</figure>
+</div>
+<div class="tw-ta-container hide-focus-ring tw-nfl" id="tw-target-rmn-container"><span>But what is happening behind the scenes is that the statement </span><code class="highlighter-rouge">michele_age &gt; 17</code><span><span> </span>is being evaluated into a type that is either<span> </span></span><code class="highlighter-rouge">True</code><span><span> </span>or<span> </span></span><code class="highlighter-rouge">False</code><span>. This is then getting stored inside the variable<span> </span></span><code class="highlighter-rouge">truth_value</code><span>, and then the decision is being made inside the conditional.</span></div>
+<div class="tw-ta-container hide-focus-ring tw-nfl">
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">但是幕後發生的事情是，語句michele_age&gt; 17正在被評估為True或False類型。然後將其存儲在變量true_value中，然後在條件中進行決策。</span></p>
+<p>Here is another example:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">17</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated R movie"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated PG-13 movie"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s">"can only see rated PG movies"</span><span class="p">)</span></code></pre>
+</figure>
+<p>What the<span> </span><code class="highlighter-rouge">while True</code><span> </span>statement does at the beginning of the code segment is continue asking for an age and printing a response - it never stops. <span style="color: #ff0000;">(To stop it, press CTRL-C in a terminal or in the Python shell)</span>.</p>
+<p>These types -<span> </span><code class="highlighter-rouge">True</code><span> </span>and<span> </span><code class="highlighter-rouge">False</code><span> </span>are called<span> </span><strong>boolean</strong><span> </span>types or<span> </span><strong>boolean</strong><span> </span>variables. They can only take on two values, either<span> </span><code class="highlighter-rouge">True</code><span> </span>or<span> </span><code class="highlighter-rouge">False</code>.</p>
+<p><span style="color: #0000ff;">而True語句在代碼段的開頭執行的操作是繼續詢問年齡並打印響應-它永遠不會停止。 <span style="color: #ff0000;">（要停止它，請在終端或Python Shell中按CTRL-C）</span>。 這些類型-True和False稱為布爾類型或布爾變量。它們只能採用兩個值，即True或False。</span></p>
+<p>For more extensive reading on Python booleans, take a look at<span> </span><a href="http://www.pythonforbeginners.com/basics/boolean">these</a><span> </span><a href="http://learnpythonthehardway.org/book/ex28.html">resources</a>.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">有關Python布爾值的更多詳細信息，請查看這些資源。</span></p>
+<span style="color: #ff0000;"><strong>Equality testing on strings  字符串相等性測試</strong></span>
+<p>Scenarios come up where you need to test if things are equal to each other - numbers or strings or something else. We covered this idea in<span> </span><a href="https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html">a previous post</a>, but it is worth returning to again, this time for strings.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">在場景中，您需要測試事物是否彼此相等-數字或字符串或其他。我們在上一篇文章中介紹了這個想法，但是這次還是值得再次討論的。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">Remember, comparing numbers for equality is done with an <code class="highlighter-rouge">==</code> sign, like so:</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">請記住，比較數字是否相等是使用==符號完成的，如下所示：</span></p>
+<pre><code class="language-python" data-lang="python"><span class="n">age</span> <span class="o">=</span> <span class="mi">21</span>
+  <span class="k">if</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You are 21!"</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You're old."</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Young one!"</span><span class="p">)<br/></span></code></pre>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">Turns out, comparing strings is equally (hehe..) simple, using a <code class="highlighter-rouge">==</code> to check for equality and <code class="highlighter-rouge">!=</code> to check for inequality.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">事實證明，使用==來檢查是否相等，使用！=來檢查不相等，比較字符串同樣簡單（hehe ..）。</span></p>
+<pre><code class="language-python" data-lang="python"> <span class="n">password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
+  <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="s">"unsafepassword"</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You may enter."</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Try again!"</span><span class="p">)</span></code></pre>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span>Or, a more practical password-checking piece of code:</span></p>
+<div class="tw-ta-container hide-focus-ring tw-lfl" id="tw-target-text-container" tabindex="0">
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">或者，使用更實用的密碼檢查代碼：</span></p>
+</div>
+<div class="tw-ta-container hide-focus-ring tw-nfl" id="tw-target-rmn-container">
+<pre><code class="language-python" data-lang="python"> <span class="n">real_password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
+  <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">while</span> <span class="n">user_password</span> <span class="o">!=</span> <span class="n">real_password</span><span class="p">:</span>
+    <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"You may enter!"</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #ff0000;"><strong>Binary search 二進制搜索</strong></span></div>
+<div class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #ff0000;"><strong></strong></span></div>
+<p class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #000000;">There are a number of ways to search for elements in a list, and there is no one correct way to do so. The point of this exercise is to get you thinking about possible ways to search for elements in the list, in an entire sequence of exercises about lists, searching, and sorting. This exercise might seem silly and easy at first, but the more you dive into this topic, the more difficult it becomes.</span></p>
+<div class="tw-ta-container hide-focus-ring tw-nfl">
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">有多種方法可以搜索列表中的元素，但沒有一種正確的方法可以搜索列表中的元素。該練習的目的是讓您思考有關列表，搜索和排序的整個練習序列中搜索列表中元素的可能方法。剛開始時，此練習可能看起來很愚蠢且容易，但是您越深入該主題，就越困難。</span></p>
+</div>
+<p class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #000000;">The word “binary” means there are two choices (in computers, often this is 0 or 1, but it really means any choice between two things). “Search” is to look for something. So the main idea behind binary search is to look for something in a way that gives you a decision tree for where to look, containing two choices. Let me give you an example:</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">“二進制”一詞表示有兩種選擇（在計算機中，通常是0或1，但實際上表示在兩種情況之間可以選擇）。 “搜索”是尋找東西。因此，二進制搜索背後的主要思想是以某種方式尋找事物，該決策樹為您提供尋找位置的決策樹，其中包含兩個選擇。讓我舉一個例子：</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">Let’s take the list <code class="highlighter-rouge">a = [1, 3, 5, 30, 42, 43, 500]</code>. It is an “ordered list”, or a list where the elements in the list go from smaller to larger. Let’s say we want to know whether the element <code class="highlighter-rouge">9</code> is in the list or not. Here is what we do:</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">讓我們以列表= [1、3、5、30、42、43、500]為例。它是一個“有序列表”，或者是列表中元素從小到大的列表。假設我們想知道元素9是否在列表中。這是我們的工作：</span></p>
+<ul>
+<li>Look at the middle element in the list - it is ‘30’. * ‘9 &lt; 30’, so let us ignore the elements to the right of ‘30’.</li>
+<li>The new list we are looking at is now<span> </span><code class="highlighter-rouge">[1, 3, 5]</code>.</li>
+<li>Look at the middle element in this new list - it is<span> </span><code class="highlighter-rouge">3</code>.</li>
+<li>‘9 &gt; 3’, so ignore the elements to the left of<span> </span><code class="highlighter-rouge">3</code>.</li>
+<li>The new list we are looking at is<span> </span><code class="highlighter-rouge">[5]</code>.</li>
+<li>The list has one element and it is not<span> </span><code class="highlighter-rouge">9</code>.</li>
+<li><code class="highlighter-rouge">9</code><span> </span>is not in the list.</li>
+</ul>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #0000ff;"></span></p>
+<p class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #000000;"><span>What the example shows is that in an ordered list, knowing how the element you are looking for compares to another element in the list splits the list in two - one half where the element can be, and one where it definitely cannot be. In the case where our list contains millions of elements, knowing that we can cut the “search space” in half is a great increase in efficiency.</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">該示例顯示的是，在有序列表中，知道要查找的元素與列表中另一個元素的比較方式，將列表分為兩部分-元素可以位於其中一半，而絕對不能位於其中。在我們的列表包含數百萬個元素的情況下，知道我們可以將“搜索空間”減少一半，這將大大提高效率。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">When you are writing the solution, first try to write it without binary search. Then when you want to try implementing binary search, write a separate function. In the solution I will give an example for how to write a binary search in Python.</span></p>
+<div class="tw-ta-container hide-focus-ring tw-lfl" id="tw-target-text-container" tabindex="0">
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">在編寫解決方案時，請首先嘗試在不進行二進制搜索的情況下編寫它。然後，當您想嘗試實現二進制搜索時，編寫一個單獨的函數。在解決方案中，我將給出一個示例，說明如何使用Python編寫二進制搜索。</span></p>
+</div>
+<div class="tw-ta-container hide-focus-ring tw-nfl" id="tw-target-rmn-container"></div>
+<p class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #000000;"><span></span></span></p>
+<p class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #000000;"><span></span></span></p>
+<p class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #000000;"><span></span></span></p><br />no.9 Guessing Game One << <a href='no.9 Guessing Game One.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
