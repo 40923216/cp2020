@@ -149,8 +149,8 @@ img.add_border {
 <p>An obvious example is when using conditionals:</p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">一個明顯的例子是使用條件句時：</span></p>
 <figure class="highlight">
-<pre><code class="language-python" data-lang="python">  <span class="n">michele_age</span> <span class="o">=</span> <span class="mi">22</span>
-  <span class="n">truth_value</span> <span class="o">=</span> <span class="n">michele_age</span> <span class="o">&gt;</span> <span class="mi">17</span>
+<pre><code class="language-python" data-lang="python">  <span class="n">michele_age</span> <span class="o">=</span> <span class="mi" style="color: #99cc00;">22</span>
+  <span class="n">truth_value</span> <span class="o">=</span> <span class="n">michele_age</span> <span class="o">&gt;</span><span class="mi" style="color: #99cc00;"> 17</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">truth_value</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Michele can see a rated R movie"</span><span class="p">)<br/><br/></span></code></pre>
 </figure>
@@ -160,14 +160,14 @@ img.add_border {
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">但是幕後發生的事情是，語句michele_age&gt; 17正在被評估為True或False類型。然後將其存儲在變量true_value中，然後在條件中進行決策。</span></p>
 <p>Here is another example:</p>
 <figure class="highlight">
-<pre><code class="language-python" data-lang="python">  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">17</span><span class="p">:</span> 
-      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated R movie"</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated PG-13 movie"</span><span class="p">)</span>
+<pre><code class="language-python" data-lang="python">  <span class="k">while</span> <span class="bp" style="color: #808000;">True</span><span class="p">:</span>
+    <span class="n">age</span> <span class="o">=</span><span class="nb" style="color: #00ccff;"> input</span><span class="p">(</span><span class="s" style="color: #ff0000;">"How old are you? "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span><span class="mi" style="color: #99cc00;"> 17</span><span class="p">:</span> 
+      <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"can see a rated R movie"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi" style="color: #99cc00;">17 </span><span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span><span style="color: #99cc00;"> <span class="mi">12</span><span class="p">:</span></span>
+      <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"can see a rated PG-13 movie"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span> 
-      <span class="k">print</span><span class="p">(</span><span class="s">"can only see rated PG movies"</span><span class="p">)</span></code></pre>
+      <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"can only see rated PG movies"</span><span class="p">)</span></code></pre>
 </figure>
 <p>What the<span> </span><code class="highlighter-rouge">while True</code><span> </span>statement does at the beginning of the code segment is continue asking for an age and printing a response - it never stops. <span style="color: #ff0000;">(To stop it, press CTRL-C in a terminal or in the Python shell)</span>.</p>
 <p>These types -<span> </span><code class="highlighter-rouge">True</code><span> </span>and<span> </span><code class="highlighter-rouge">False</code><span> </span>are called<span> </span><strong>boolean</strong><span> </span>types or<span> </span><strong>boolean</strong><span> </span>variables. They can only take on two values, either<span> </span><code class="highlighter-rouge">True</code><span> </span>or<span> </span><code class="highlighter-rouge">False</code>.</p>
