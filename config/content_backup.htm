@@ -195,7 +195,7 @@ CNR —通信網絡轉接卡取代了AMR，並在轉接卡上支持六通道數�
 <pre><code class="language-python" data-lang="python">  <span class="n">michele_age</span> <span class="o">=</span> <span class="mi" style="color: #99cc00;">22</span>
   <span class="n">truth_value</span> <span class="o">=</span> <span class="n">michele_age</span> <span class="o">&gt;</span><span class="mi" style="color: #99cc00;"> 17</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">truth_value</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Michele can see a rated R movie"</span><span class="p">)<br/><br/></span></code></pre>
+    <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"Michele can see a rated R movie"</span><span class="p">)<br/><br/></span></code></pre>
 </figure>
 </div>
 <div class="tw-ta-container hide-focus-ring tw-nfl" id="tw-target-rmn-container"><span>But what is happening behind the scenes is that the statement </span><code class="highlighter-rouge">michele_age &gt; 17</code><span><span> </span>is being evaluated into a type that is either<span> </span></span><code class="highlighter-rouge">True</code><span><span> </span>or<span> </span></span><code class="highlighter-rouge">False</code><span>. This is then getting stored inside the variable<span> </span></span><code class="highlighter-rouge">truth_value</code><span>, and then the decision is being made inside the conditional.</span></div>
@@ -222,30 +222,30 @@ CNR —通信網絡轉接卡取代了AMR，並在轉接卡上支持六通道數�
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">在場景中，您需要測試事物是否彼此相等-數字或字符串或其他。我們在上一篇文章中介紹了這個想法，但是這次還是值得再次討論的。</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">Remember, comparing numbers for equality is done with an <code class="highlighter-rouge">==</code> sign, like so:</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">請記住，比較數字是否相等是使用==符號完成的，如下所示：</span></p>
-<pre><code class="language-python" data-lang="python"><span class="n">age</span> <span class="o">=</span> <span class="mi">21</span>
-  <span class="k">if</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"You are 21!"</span><span class="p">)</span>
-  <span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"You're old."</span><span class="p">)</span>
+<pre><code class="language-python" data-lang="python"><span class="n">age</span> <span class="o">=</span><span class="mi" style="color: #99cc00;"> 21</span>
+  <span class="k">if</span> <span class="n">age</span> <span class="o">==</span> <span class="mi" style="color: #99cc00;">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"You are 21!"</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi" style="color: #99cc00;">21</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"You're old."</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Young one!"</span><span class="p">)<br/></span></code></pre>
+    <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"Young one!"</span><span class="p">)<br/></span></code></pre>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW" style="color: #000000;">Turns out, comparing strings is equally (hehe..) simple, using a <code class="highlighter-rouge">==</code> to check for equality and <code class="highlighter-rouge">!=</code> to check for inequality.</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">事實證明，使用==來檢查是否相等，使用！=來檢查不相等，比較字符串同樣簡單（hehe ..）。</span></p>
-<pre><code class="language-python" data-lang="python"> <span class="n">password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
-  <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="s">"unsafepassword"</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"You may enter."</span><span class="p">)</span>
+<pre><code class="language-python" data-lang="python"> <span class="n">password</span> <span class="o">=</span> <span class="s" style="color: #ff0000;">"unsafepassword"</span>
+  <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="s" style="color: #ff0000;">"unsafepassword"</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"You may enter."</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Try again!"</span><span class="p">)</span></code></pre>
+    <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"Try again!"</span><span class="p">)</span></code></pre>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span>Or, a more practical password-checking piece of code:</span></p>
 <div class="tw-ta-container hide-focus-ring tw-lfl" id="tw-target-text-container" tabindex="0">
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #0000ff;">或者，使用更實用的密碼檢查代碼：</span></p>
 </div>
 <div class="tw-ta-container hide-focus-ring tw-nfl" id="tw-target-rmn-container">
-<pre><code class="language-python" data-lang="python"> <span class="n">real_password</span> <span class="o">=</span> <span class="s">"unsafepassword"</span>
-  <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
+<pre><code class="language-python" data-lang="python"> <span class="n">real_password</span> <span class="o">=</span><span class="s" style="color: #ff0000;"> "unsafepassword"</span>
+  <span class="n">user_password</span> <span class="o">=</span> <span class="nb" style="color: #33cccc;">input</span><span class="p">(</span><span class="s" style="color: #ff0000;">"Enter the password: "</span><span class="p">)</span>
   <span class="k">while</span> <span class="n">user_password</span> <span class="o">!=</span> <span class="n">real_password</span><span class="p">:</span>
-    <span class="n">user_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter the password: "</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"You may enter!"</span><span class="p">)</span></code></pre>
+    <span class="n">user_password</span> <span class="o">=</span> <span class="nb" style="color: #33cccc;">input</span><span class="p">(</span><span class="s" style="color: #ff0000;">"Enter the password: "</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s" style="color: #ff0000;">"You may enter!"</span><span class="p">)</span></code></pre>
 </div>
 </div>
 <div class="tw-ta-container hide-focus-ring tw-nfl"><span style="color: #ff0000;"><strong>Binary search 二進制搜索</strong></span></div>
